@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Namaste React</title>
+</head>
+<body>
+    <h1>Hello World!</h1>
+    <div id="javascrip-heading"></div>
+    <div id="react-heading"></div>
+    <div id="react-body"></div>
+    <div id="empty-div"></div>
+    <div id="fragment-div"></div>
+    <script>
+        const jsHeading = document.createElement("h1");
+        jsHeading.innerHTML = "Hello JS World!";
+        const jsBody = document.getElementById("javascrip-heading");
+        jsBody.appendChild(jsHeading);
+    </script>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="create-element.js"></script>
+    <script>
+        function MyComponent(props) {
+            return React.createElement("div", {style: props.style}, props.children);
+        }
+        function MyChildComponent(props) {
+            return React.createElement("span", {style: props.style}, props.first + props.second, props.children);
+        }
+        function CreateAnEmptyDiv(){
+            return React.createElement("div")
+        }
+        
+        // Usage:
+        ReactDOM.createRoot(document.getElementById("react-body")).render(
+            React.createElement(MyComponent, {style:{backgroundColor: "lightblue", display: "inline-block"}}, React.createElement(MyChildComponent, {style:{color: "red"}, first: 50, second: 100}, [" Students", React.createElement(CreateAnEmptyDiv, null)]))
+        );
+    </script>
+</body>
+</html>
