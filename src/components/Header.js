@@ -5,7 +5,7 @@ import { LOGO_URL } from "../utils/constant";
 const Header = () => {
   const logo = LOGO_URL;
   return (
-    <div className="header-container">
+    <div className="header-container" id="header">
       <div className="logo">
         <img src={logo} width={120} alt="Logo" />
       </div>
