@@ -1,0 +1,8 @@
+@import "tailwindcss";
+
+.logo {
+    @apply w-16 h-auto;    
+}
+.logo:hover {
+    @apply opacity-90;
+}
